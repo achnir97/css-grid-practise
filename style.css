@@ -1,0 +1,97 @@
+  .grid-container {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr; /* First column is 200px (sidebar), others flexible */
+      grid-template-rows: auto 1fr 1fr 1fr auto; /* First row (header), last row (footer) */
+      grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "sidebar main main"
+        "sidebar main main"
+        "footer footer footer"; /* Defines areas for each section */
+      gap: 10px; /* Adds space between grid items */
+      padding: 20px;
+      height: 100vh; /* Full viewport height */
+      background-color: #f7f7f7; /* Light background for the container */
+    }
+
+    /* Modern and Elegant Header Styling */
+    .header {
+      grid-area: header; /* Places this element in the 'header' area */
+      background-color: #2f3e46; /* Dark elegant background */
+      color: #ffffff; /* White text for contrast */
+      padding: 20px;
+      text-align: center;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Modern Sidebar Styling */
+    .sidebar {
+      grid-area: sidebar; /* Places this element in the 'sidebar' area */
+      background-color: #4a5c64; /* Medium grey/blue background */
+      color: #ffffff;
+      padding: 20px;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Main Content Area Styling */
+    .main-content {
+      grid-area: main; /* Places this element in the 'main' area */
+      display: grid; /* Nested grid for the main content */
+      grid-template-rows: 1fr 1fr 1fr; /* 3 equal-height rows */
+      gap: 10px; /* Gap between the rows */
+      background-color: #eaeaea;
+      padding: 20px;
+    }
+
+    .main-row {
+      background-color: #f1f3f5; /* Light background for the rows */
+      padding: 20px;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+      color: #343a40; /* Dark grey text */
+    }
+
+    /* Nested grid for main-row 1 */
+    .main-row-1 {
+      display: grid; /* Apply grid to main-row 1 */
+      grid-template-columns: 1fr 1fr; /* Divide into two equal columns */
+      gap: 10px; /* Adds gap between the columns */
+    }
+
+    /* Nested grid for column 1 of main-row 1 */
+    .col1-main-row-1 {
+      display: grid; /* Apply grid to column 1 of main-row 1 */
+      grid-template-rows: 1fr 1fr; /* Two equal rows */
+      gap: 10px; /* Adds gap between the rows */
+    }
+
+    /* Styling for divisions inside column 1 of main-row 1 */
+    .col1-main-row-1 div {
+      border: 2px dotted #6c757d; /* Dotted line for rows inside column 1 of main-row 1 */
+      background-color: #f8f9fa; /* Very light background for contrast */
+      padding: 15px;
+      color: #495057;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Styling for column 2 of main-row 1 */
+    .main-row-1 > div:nth-child(2) {
+      border: 2px dotted #6c757d; /* Dotted line for column 2 */
+      background-color: #f8f9fa;
+      padding: 15px;
+      color: #495057;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Modern Footer Styling */
+    .footer {
+      grid-area: footer; /* Places this element in the 'footer' area */
+      background-color: #2f3e46; /* Same as header for visual consistency */
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+    }
