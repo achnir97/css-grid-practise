@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Grid Layout with Sample Text</title>
+  
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr; /* First column is 200px (sidebar), others flexible */
+      grid-template-rows: auto 1fr 1fr 1fr auto; /* First row (header), last row (footer) */
+      grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "sidebar main main"
+        "sidebar main main"
+        "footer footer footer"; /* Defines areas for each section */
+      gap: 10px; /* Adds space between grid items */
+      padding: 20px;
+      height: 100vh; /* Full viewport height */
+      background-color: #f7f7f7; /* Light background for the container */
+    }
+
+    /* Modern and Elegant Header Styling */
+    .header {
+      grid-area: header; /* Places this element in the 'header' area */
+      background-color: #2f3e46; /* Dark elegant background */
+      color: #ffffff; /* White text for contrast */
+      padding: 20px;
+      text-align: center;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Modern Sidebar Styling */
+    .sidebar {
+      grid-area: sidebar; /* Places this element in the 'sidebar' area */
+      background-color: #4a5c64; /* Medium grey/blue background */
+      color: #ffffff;
+      padding: 20px;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Main Content Area Styling */
+    .main-content {
+      grid-area: main; /* Places this element in the 'main' area */
+      display: grid; /* Nested grid for the main content */
+      grid-template-rows: 1fr 1fr 1fr; /* 3 equal-height rows */
+      gap: 10px; /* Gap between the rows */
+      background-color: #eaeaea;
+      padding: 20px;
+    }
+
+    .main-row {
+      background-color: #f1f3f5; /* Light background for the rows */
+      padding: 20px;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+      color: #343a40; /* Dark grey text */
+    }
+
+    /* Nested grid for main-row 1 */
+    .main-row-1 {
+      display: grid; /* Apply grid to main-row 1 */
+      grid-template-columns: 1fr 1fr; /* Divide into two equal columns */
+      gap: 10px; /* Adds gap between the columns */
+    }
+
+    /* Nested grid for column 1 of main-row 1 */
+    .col1-main-row-1 {
+      display: grid; /* Apply grid to column 1 of main-row 1 */
+      grid-template-rows: 1fr 1fr; /* Two equal rows */
+      gap: 10px; /* Adds gap between the rows */
+    }
+
+    /* Styling for divisions inside column 1 of main-row 1 */
+    .col1-main-row-1 div {
+      border: 2px dotted #6c757d; /* Dotted line for rows inside column 1 of main-row 1 */
+      background-color: #f8f9fa; /* Very light background for contrast */
+      padding: 15px;
+      color: #495057;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Styling for column 2 of main-row 1 */
+    .main-row-1 > div:nth-child(2) {
+      border: 2px dotted #6c757d; /* Dotted line for column 2 */
+      background-color: #f8f9fa;
+      padding: 15px;
+      color: #495057;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Modern Footer Styling */
+    .footer {
+      grid-area: footer; /* Places this element in the 'footer' area */
+      background-color: #2f3e46; /* Same as header for visual consistency */
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border: 2px dotted #6c757d; /* Soft dotted border */
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <header class="header">
+      <h1>Welcome to My Modern Website</h1>
+      <p>A clean, minimalistic approach for your web design needs. This is your one-stop solution for creating elegant, responsive, and functional websites.</p>
+    </header>
+    
+    <aside class="sidebar">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content divided into 3 rows with dotted lines -->
+    <main class="main-content">
+      <div class="main-row main-row-1">
+        <!-- Column 1 divided into two rows with dotted lines -->
+        <div class="col1-main-row-1">
+          <div>
+            <h3>Our Mission</h3>
+            <p>At Modern Web Solutions, our mission is to provide innovative, high-quality, and affordable web solutions that meet the needs of businesses of all sizes.</p>
+          </div>
+          <div>
+            <h3>Our Values</h3>
+            <p>We believe in integrity, transparency, and customer satisfaction. Our goal is to build long-lasting relationships with our clients through exceptional service.</p>
+          </div>
+        </div>
+        <div>
+          <h3>Why Choose Us</h3>
+          <p>We offer a unique blend of creativity and technical expertise, ensuring your website stands out in today's competitive online landscape.</p>
+        </div>
+      </div>
+      <div class="main-row">
+        <h3>What We Do</h3>
+        <p>We specialize in web development, design, SEO, and digital marketing strategies. Our team is passionate about creating user-friendly websites that drive growth and engagement.</p>
+      </div>
+      <div class="main-row">
+        <h3>Client Testimonials</h3>
+        <p>"Modern Web Solutions transformed our online presence. Their attention to detail and commitment to customer satisfaction were second to none!" - Sarah L., Business Owner</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 Modern Web Solutions. All rights reserved. Follow us on <a href="#">Facebook</a>, <a href="#">Twitter</a>, and <a href="#">LinkedIn</a>.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
